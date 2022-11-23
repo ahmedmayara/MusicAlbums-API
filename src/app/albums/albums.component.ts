@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Album } from '../model/album.model';
 import { AlbumService } from '../services/album.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-albums',
@@ -12,7 +13,7 @@ export class AlbumsComponent implements OnInit {
 
   albums : Album[] = [];
 
-  constructor(private albumService: AlbumService, private router : Router) {}
+  constructor(private albumService: AlbumService, private router : Router, public authService : AuthService) {}
 
   deleteAlbum(a : Album) {
     let conf = confirm("Are you sure you want to delete this album?");

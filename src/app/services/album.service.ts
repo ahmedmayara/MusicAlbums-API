@@ -17,7 +17,8 @@ export class AlbumService {
   albums : Album[] = [];
   album!: Album;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
     albumList(): Observable<Album[]> {
       return this.http.get<Album[]>(this.apiURL);

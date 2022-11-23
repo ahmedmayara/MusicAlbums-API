@@ -12,15 +12,15 @@ export class AddAlbumComponent implements OnInit {
 
   newAlbum = new Album();
 
+  ngOnInit(): void {}
+
   addAlbum() {
     this.albumService.addAlbum(this.newAlbum).subscribe(data => {
       console.log(data);
+      this.router.navigate(['albums']);
     });
   }
 
   constructor(private albumService: AlbumService, private router : Router) {}
-
-  ngOnInit(): void {
-  }
 
 }
